@@ -33,7 +33,7 @@ public class CosmeticAnew implements ModInitializer {
 	public void onInitialize() {
 		ItemInit.register();
 		EquipmentSlot slot = EquipmentSlot.fromTypeIndex(EquipmentSlot.Type.ARMOR, 2);
-		TrinketsApi.registerTrinketPredicate(id(slot.getName()), ((itemStack, slotReference, livingEntity) -> {
+		TrinketsApi.registerTrinketPredicate(CosmeticAnew.id(slot.getName()), ((itemStack, slotReference, livingEntity) -> {
 			if (itemStack.isIn(TagsInit.Items.COSMETICS)){
 				return TriState.TRUE;
 			}
