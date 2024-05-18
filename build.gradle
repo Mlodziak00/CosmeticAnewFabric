@@ -19,6 +19,10 @@ repositories {
 		name = "Ladysnake Libs"
 		url = 'https://maven.ladysnake.org/releases'
 	}
+	maven {
+		name = "Jitpack"
+		url "https://jitpack.io"
+	}
 }
 
 fabricApi {
@@ -35,8 +39,10 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// Trinkets
-	modImplementation "dev.emi:trinkets:${trinkets_version}"
-	
+	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
+
+	// Cosmetic Lib
+	modImplementation "com.github.Mlodziak00:CosmeticLib:${project.cosmeticlib_version}"
 }
 
 processResources {
@@ -78,9 +84,6 @@ publishing {
 
 	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
 	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
+
 	}
 }

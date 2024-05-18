@@ -1,4 +1,8 @@
 {
-  "item.cosmeticanew.testclothing": "Test Hoodie",
-  "item.cosmeticanew.testclothing2": "Test T-Shirt"
+  "item.cosmeticanew.royal_mantle": "Royal Mantle",
+  "item.cosmeticanew.nostalgic_clothes": "Nostalgic Clothes",
+  "item.cosmeticanew.fancy_suit": "Fancy Suit",
+  "item.cosmeticanew.lumber_clothes": "Lumber Clothing",
+  "item.cosmeticanew.casual_clothes": "Casual Clothes",
+  "item.cosmeticanew.clothier_spawner": "Clothiers Coin"
 }

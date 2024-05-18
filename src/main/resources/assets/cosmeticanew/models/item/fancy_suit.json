@@ -2,6 +2,6 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "cosmeticanew:item/testclothing"
+		"layer0": "cosmeticanew:item/fancy_suit"
 	}
 }
