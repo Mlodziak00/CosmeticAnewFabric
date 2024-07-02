@@ -3,7 +3,9 @@
 	"package": "net.lightglow.cosmeticanew.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"PiglinBrainMixin"
+		"PiglinBrainMixin",
+		"ActiveTargetGoalMixin",
+		"VillagerEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

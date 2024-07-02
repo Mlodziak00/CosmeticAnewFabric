@@ -3,15 +3,15 @@
 	"id": "cosmeticanew",
 	"version": "${version}",
 	"name": "CosmeticAnew",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Trinket Cosmetic Clothing Mod",
 	"authors": [
-		"Me!"
+		"Mlodziak00"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "",
+		"sources": "https://github.com/Mlodziak00/CosmeticAnewFabric"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/cosmeticanew/icon.png",
 	"environment": "*",
 	"entrypoints": {

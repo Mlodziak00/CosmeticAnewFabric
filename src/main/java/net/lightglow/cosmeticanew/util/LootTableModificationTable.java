@@ -23,9 +23,14 @@ public class LootTableModificationTable {
             new Identifier("minecraft", "chests/desert_pyramid");
     private static final Identifier SIMPLE_DUNGEON_LOOT =
             new Identifier("minecraft", "chests/simple_dungeon");
+    private static final Identifier PILLAGER_OUTPOST =
+            new Identifier("minecraft", "chests/pillager_outpost");
+    private static final Identifier WOODLAND_MANSION =
+            new Identifier("minecraft", "chests/woodland_mansion");
 
 
     public static void modifyLootTables(){
+        // ROYAL MANTLE
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if (BASTION_TREASURE_LOOT.equals(id)){
                 LootPool.Builder poolBuilder = LootPool.builder()
@@ -36,6 +41,7 @@ public class LootTableModificationTable {
                 tableBuilder.pool(poolBuilder.build());
             }
         });
+        // CLASSIC
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if (VILLAGE_PLAINS_LOOT.equals(id)){
                 LootPool.Builder poolBuilder = LootPool.builder()
@@ -46,6 +52,29 @@ public class LootTableModificationTable {
                 tableBuilder.pool(poolBuilder.build());
             }
         });
+        // DESERT WANDERER
+        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+            if (DESERT_PYRAMID_LOOT.equals(id)){
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.05f))
+                        .with(ItemEntry.builder(ItemInit.DESERT_WANDERER))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+        });
+        // ILLAGER CLOTHES
+        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+            if (PILLAGER_OUTPOST.equals(id) || WOODLAND_MANSION.equals(id)){
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(ItemInit.ILLAGER_CLOTHING))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+        });
+        // CLOTHIER COIN
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if (MINESHAFT_LOOT.equals(id) || RUINED_PORTAL_LOOT.equals(id) || DESERT_PYRAMID_LOOT.equals(id) || SIMPLE_DUNGEON_LOOT.equals(id)){
                 LootPool.Builder poolBuilder = LootPool.builder()
